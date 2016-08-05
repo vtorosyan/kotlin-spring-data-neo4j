@@ -1,6 +1,6 @@
 # Kotlin example with Spring Data Neo4J and Spring Web
 
-A basic application which uses Kotlin as a programming language to demonstrate power of Kotlin and it's basic principles. 
+A basic application which uses Kotlin as a programming language to demonstrate power of Kotlin and its basic principles. 
 
 The application uses [Neo4J Movie demo] (https://neo4j.com/developer/example-project/) database as data set and demonstrates connection to and usage of [Neo4J] (https://neo4j.com/) Graph Database using Spring Data Neo4j. 
 
