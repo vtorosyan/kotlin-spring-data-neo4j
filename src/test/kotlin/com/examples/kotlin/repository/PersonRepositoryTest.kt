@@ -1,6 +1,5 @@
 package com.examples.kotlin.repository
 
-import com.examples.kotlin.repository.DbData
 import com.examples.kotlin.Neo4jTestConfig
 import com.examples.kotlin.domain.Person
 import org.junit.Before
