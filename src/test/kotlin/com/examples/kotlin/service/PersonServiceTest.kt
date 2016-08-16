@@ -7,7 +7,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.InjectMocks
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.Mockito.doReturn
 import org.mockito.runners.MockitoJUnitRunner
 import kotlin.test.assertEquals
@@ -28,7 +27,7 @@ class PersonServiceTest {
     }
 
     @Test
-    fun findByName_PersonExists_ReturnList() {
+    fun `Returns list of persons when trying to find by existing name`() {
         val persons: List<Person> = personService.findByName("leo")
 
         assertNotNull(persons)
@@ -36,7 +35,7 @@ class PersonServiceTest {
     }
 
     @Test
-    fun findByName_PersonDoesNotExist_ReturnEmptyList() {
+    fun `Returns empty list of persons when trying to find by not existing name`() {
         val persons: List<Person> = personService.findByName("test")
 
         assertNotNull(persons)

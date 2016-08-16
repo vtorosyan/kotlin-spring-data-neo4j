@@ -31,7 +31,7 @@ class PersonRepositoryTest {
 
     @Test
     @DirtiesContext
-    fun findByNameIgnoreCaseContaining_NameExists_ReturnPerson() {
+    fun `Returns list of persons when trying to find by existing name`() {
         val persons: List<Person> = personRepository.findByNameIgnoreCaseContaining("cap")
 
         assertNotNull(persons)
@@ -41,7 +41,7 @@ class PersonRepositoryTest {
 
     @Test
     @DirtiesContext
-    fun findByNameIgnoreCaseContaining_NameDoesNotExist_ReturnPerson() {
+    fun `Returns empty list when trying to find with non existing name`() {
         val persons: List<Person> = personRepository.findByNameIgnoreCaseContaining("test")
 
         assertNotNull(persons)

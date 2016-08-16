@@ -29,7 +29,7 @@ class MovieServiceTest {
     }
 
     @Test
-    fun findByTitleIgnoreCaseContaining_GivenNullAsParameter_ReturnEmptyList() {
+    fun `Returns empty list when trying to retrieve by title given NULL as parameter`() {
         val movies: List<Movie> = movieService.retrieveByTitle(null)
 
         assertNotNull(movies)
@@ -37,7 +37,7 @@ class MovieServiceTest {
     }
 
     @Test
-    fun findByTitleIgnoreCaseContaining_MoviesExist_ReturnMovieList() {
+    fun `Returns list of movies when retrieving by existing title`() {
         val movies: List<Movie> = movieService.retrieveByTitle("tit")
 
         assertNotNull(movies)
@@ -45,7 +45,7 @@ class MovieServiceTest {
     }
 
     @Test
-    fun findByTitleIgnoreCaseContaining_MoviesExist_ThrowException_ReturnMovieList() {
+    fun `Returns empty list when exception is thrown while retrieving by title`() {
         doThrow(StubException()).`when`(movieRepository).findByTitleIgnoreCaseContaining(Mockito.anyString())
 
         val movies: List<Movie> = movieService.retrieveByTitle("tit")

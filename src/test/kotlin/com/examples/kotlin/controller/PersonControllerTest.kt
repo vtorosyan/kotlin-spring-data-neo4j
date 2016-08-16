@@ -24,7 +24,7 @@ class PersonControllerTest : AbstractMvcTest() {
     }
 
     @Test
-    fun findByName_PersonExists_ReturnMatchingPersons() {
+    fun `Returns HTTP Status 200 and response payload contains list of persons when searching person which exists`() {
 
         get("/persons/leo")
                 .andExpect(status().isOk)
@@ -34,7 +34,7 @@ class PersonControllerTest : AbstractMvcTest() {
     }
 
     @Test
-    fun findByName_PersonDoesExists_ReturnNotFound() {
+    fun `Returns HTTP Status 404 when searching person which does not exist`() {
 
         get("/persons/testme")
                 .andExpect(status().isNotFound)

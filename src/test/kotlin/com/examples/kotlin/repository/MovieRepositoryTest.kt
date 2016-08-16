@@ -32,7 +32,7 @@ class MovieRepositoryTest {
 
     @Test
     @DirtiesContext
-    fun findByTitleIgnoreCaseContaining_TitleContainsLetters_ReturnMovieList() {
+    fun `Returns list of movies when finding by title which exists`() {
         val movies: List<Movie>  = movieRepository.findByTitleIgnoreCaseContaining("tit")
 
         assertNotNull(movies)
@@ -41,7 +41,7 @@ class MovieRepositoryTest {
 
     @Test
     @DirtiesContext
-    fun findByTitleIgnoreCaseContaining_TitleDoesNotContain_ReturnEmptyList() {
+    fun `Returns empty list when finding by title which does not exist`() {
         val movies: List<Movie>  = movieRepository.findByTitleIgnoreCaseContaining("test")
 
         assertNotNull(movies)
@@ -50,7 +50,7 @@ class MovieRepositoryTest {
 
     @Test
     @DirtiesContext
-    fun graph() {
+    fun `Displays graph of movies`() {
         val graph: List<Map<String, Any>>  = movieRepository.graph(100)
 
         assertEquals(1, graph.size)

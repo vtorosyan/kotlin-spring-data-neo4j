@@ -26,7 +26,7 @@ class MovieControllerTest : AbstractMvcTest() {
     }
 
     @Test
-    fun retrieveByTitle_GivenTitleExists_ReturnMovies() {
+    fun `Returns HTTP Status 200 and response payload contains list of movies when searching movie which exists`() {
 
         get("/movies/tit")
                 .andExpect(status().isOk)
@@ -37,7 +37,7 @@ class MovieControllerTest : AbstractMvcTest() {
     }
 
     @Test
-    fun retrieveByTitle_GivenTitleDoesNotExist_ReturnNotFound() {
+    fun `Returns HTTP Status 404 when searching movie which does not exist`() {
 
         get("/movies/test")
                 .andExpect(status().isNotFound)
@@ -45,7 +45,7 @@ class MovieControllerTest : AbstractMvcTest() {
     }
 
     @Test
-    fun displayD3Graph_DataExists_ReturnResponse() {
+    fun `Returns HTTP Status 200 and response payload contains graph of movies when displaying graph`() {
 
         get("/movies/graph")
                 .andExpect(status().isOk)
